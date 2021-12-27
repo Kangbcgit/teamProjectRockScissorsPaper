@@ -40,7 +40,7 @@ a {
     position: relative;
 }
 
-#score .score-scoreboard {
+#score .scoreboard {
     background: orange;
     width: 45%;
     height: 40%;
@@ -51,7 +51,7 @@ a {
     transform: translate(0, -50%);
 }
 
-#score .score-reset-button {
+#score .reset-button {
     background: yellow;
     width: 30%;
     height: 40%;
