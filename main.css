@@ -1,0 +1,63 @@
+/* reset */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    caret-color: rgba(0, 0, 0, 0);
+}
+
+/* 배경 */
+.wrap {
+    width: 100%;
+    height: 100vh;
+    background: #ea2a80;
+
+    position: relative;
+}
+
+.wrap .wrapper {
+    width: 40%;
+    height: 95%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 3px 3px 50px 0px rgba(0, 0, 0, 0.466);
+    padding: 20px;
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrap .wrapper #score {
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid gray;
+
+    position: relative;
+}
+
+#score .score-scoreboard {
+    background: orange;
+    width: 45%;
+    height: 40%;
+
+    position: absolute;
+    left: 10%;
+    top: 55%;
+    transform: translate(0, -50%);
+}
+
+#score .score-reset-button {
+    background: yellow;
+    width: 30%;
+    height: 40%;
+
+    position: absolute;
+    right: 3%;
+    top: 55%;
+    transform: translate(0, -50%);
+}
