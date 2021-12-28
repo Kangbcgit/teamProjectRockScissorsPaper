@@ -55,6 +55,33 @@ section.main .score-reset-board {
     border-bottom: 1px solid #ddd;
 }
 
+section.main .score-reset-board .averaging {
+    width: 125px;
+    height: 30px;
+    margin-left: 75px;
+    margin-top: 9px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    text-align: center;
+    line-height: 30px;
+
+    float: left;
+}
+
+section.main .score-reset-board .averaging.active {
+    background: red;
+    animation: active 0.5s infinite alternate;
+}
+
+@keyframes active {
+    0% {}
+
+    100% {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+}
+
 section.main .score-reset-board .score {
     width: 250px;
     height: 50px;
@@ -76,7 +103,7 @@ section.main .score-reset-board .score .player-computer {
     position: relative;
 }
 
-section.main .score-reset-board .score .score-board {
+section section.main .score-reset-board .score .score-board {
     position: relative;
     left: -13px;
 
