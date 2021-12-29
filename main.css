@@ -56,16 +56,22 @@ section.main .score-reset-board {
 }
 
 section.main .score-reset-board .averaging {
-    width: 125px;
+    width: 175px;
     height: 30px;
-    margin-left: 75px;
+    margin-left: 45px;
     margin-top: 9px;
     border: 1px solid #ddd;
     border-radius: 14px;
     text-align: center;
     line-height: 30px;
+    cursor: pointer;
 
     float: left;
+}
+
+section.main .score-reset-board .averaging:hover {
+    background: #dec6eb;
+    border: 1px solid #777;
 }
 
 section.main .score-reset-board .averaging.active {
