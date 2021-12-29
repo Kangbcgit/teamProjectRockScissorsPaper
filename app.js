@@ -10,30 +10,31 @@ const data = {
             pick: 0
         }
     },
-    round: 0,
-    userChance: 0
+    round: 0
 }
-//하단 가위,바위,보 선택창
-let $scissors = document.querySelector('#scissors');
-let $rock = document.querySelector('#rock');
-let $paper = document.querySelector('#paper');
-//유저 선택, 컴퓨터 선택창
-let $playerGame = document.querySelector('.player-game');
-let $computerGame = document.querySelector('.computer-game');
-//유저, 컴퓨터 점수
-let $playerScore = document.querySelector('#player-score');
-let $computerScore = document.querySelector('#computer-score');
-//찬스
-let $averaging = document.querySelector('.averaging');
+const link = {
+    //하단 가위,바위,보 선택창
+    $scissors: document.querySelector('#scissors'),
+    $rock: document.querySelector('#rock'),
+    $paper: document.querySelector('#paper'),
+    //유저 선택, 컴퓨터 선택창
+    $playerGame: document.querySelector('.player-game'),
+    $computerGame: document.querySelector('.computer-game'),
+    //유저, 컴퓨터 점수
+    $playerScore: document.querySelector('#player-score'),
+    $computerScore: document.querySelector('#computer-score'),
+    //찬스
+    $averaging: document.querySelector('.averaging')
+};
 
 //하단에서 선택한 pick 체크 
 let footerPick = e => {
     let count;
-    if (e.target === $scissors) {
+    if (e.target === link.$scissors) {
         count = 1;
-    } else if (e.target === $rock) {
+    } else if (e.target === link.$rock) {
         count = 2;
-    } else if (e.target === $paper) {
+    } else if (e.target === link.$paper) {
         count = 3;
     }
     return count;
@@ -68,23 +69,23 @@ let changeGameImage = () => {
     let targetClass = ['scissors', 'rock', 'paper'];
     for (let i = 0, j = targetClass.length; i < j; i++) {
         if (data.player.user.pick === i + 1) {
-            $playerGame.classList.add(targetClass[i]);
+            link.$playerGame.classList.add(targetClass[i]);
         } else {
-            $playerGame.classList.remove(targetClass[i]);
+            link.$playerGame.classList.remove(targetClass[i]);
         }
 
         if (data.player.computer.pick === i + 1) {
-            $computerGame.classList.add(targetClass[i]);
+            link.$computerGame.classList.add(targetClass[i]);
         } else {
-            $computerGame.classList.remove(targetClass[i]);
+            link.$computerGame.classList.remove(targetClass[i]);
         }
     }
 }
 // 스코어 보드에 데이터 반영
 let changeScoreboard = () => {
-    $playerScore.textContent = data.player.user.score;
-    $computerScore.textContent = data.player.computer.score;
-    $averaging.firstElementChild.textContent = data.round;
+    link.$playerScore.textContent = data.player.user.score;
+    link.$computerScore.textContent = data.player.computer.score;
+    link.$averaging.firstElementChild.textContent = data.round;
 }
 //운빨보정 계산
 let vsAveraging = () => {
@@ -115,13 +116,13 @@ let vsAveraging = () => {
         }
         data.player.user.score = 0;
         data.player.computer.score = 0;
+        data.round = 0;
         changeScoreboard();
     });
-    $averaging.addEventListener('click', e => {
+    link.$averaging.addEventListener('click', e => {
         if (!e.target.matches('.score-reset-board .averaging')) {
             return;
         }
-        console.log(data.round);
         vsAveraging();
     })
 })();
