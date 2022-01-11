@@ -10,7 +10,8 @@ const data = {
             pick: 0
         }
     },
-    round: 0
+    round: 0,
+    userChance: 0
 }
 const link = {
     //하단 가위,바위,보 선택창
@@ -116,13 +117,13 @@ let vsAveraging = () => {
         }
         data.player.user.score = 0;
         data.player.computer.score = 0;
-        data.round = 0;
         changeScoreboard();
     });
     link.$averaging.addEventListener('click', e => {
         if (!e.target.matches('.score-reset-board .averaging')) {
             return;
         }
+        console.log(data.round);
         vsAveraging();
     })
 })();
